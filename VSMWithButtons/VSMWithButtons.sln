@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Blend for Visual Studio 15
+VisualStudioVersion = 15.0.28010.2046
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSMWithButtons", "VSMWithButtons\VSMWithButtons.csproj", "{0CCDD87B-433E-452A-A298-EB7B9263E7DD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0CCDD87B-433E-452A-A298-EB7B9263E7DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CCDD87B-433E-452A-A298-EB7B9263E7DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CCDD87B-433E-452A-A298-EB7B9263E7DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CCDD87B-433E-452A-A298-EB7B9263E7DD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E45763BF-47FC-4A60-9F25-E5138C6C860E}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,42 @@
+﻿<Window x:Class="VSMSample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VSMSample"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid x:Name="rootGrid">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="MyStates">
+                <VisualState x:Name="EditMode" >
+                    <Storyboard>
+                        <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)" Storyboard.TargetName="button">
+                            <EasingColorKeyFrame KeyTime="0" Value="#FFD01313"/>
+                        </ColorAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
+                <VisualState x:Name="ReadMode">
+
+                    <Storyboard>
+                        <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)" Storyboard.TargetName="button1">
+                            <EasingColorKeyFrame KeyTime="0" Value="#FF47931C"/>
+                        </ColorAnimationUsingKeyFrames>
+                        <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.IsEnabled)" Storyboard.TargetName="text1">
+                            <DiscreteBooleanKeyFrame KeyTime="0" Value="False"/>
+                        </BooleanAnimationUsingKeyFrames>
+                    </Storyboard>
+
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <StackPanel>
+            <StackPanel.LayoutTransform>
+                <ScaleTransform ScaleX="3" ScaleY="3" />
+            </StackPanel.LayoutTransform>
+            <TextBox x:Name="text1" />
+            <Button x:Name="button" Content="Edit" Click="OnEdit" />
+            <Button x:Name="button1" Content="Read" Click="OnRead" />
+        </StackPanel>
+    </Grid>
+</Window>
