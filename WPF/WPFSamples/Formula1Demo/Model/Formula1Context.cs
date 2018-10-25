@@ -4,7 +4,7 @@ namespace Formula1Demo.Model
 {
     public class Formula1Context : DbContext
     {
-        private const string connectionString = @"server=(localdb)\MSSQLLocalDb;database=Formula1;trusted_connection=true";
+        private const string connectionString = @"server=(localdb)\MSSQLLocalDb;database=Formula1b;trusted_connection=true";
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);

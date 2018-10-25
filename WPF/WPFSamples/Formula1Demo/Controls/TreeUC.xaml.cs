@@ -22,10 +22,10 @@ namespace Formula1Demo.Controls
         {
             using (var data = new Formula1Context())
             {
-                return data.Races.Select(r => new Championship
+                return data.Races.Select(r => r.Date.Year).Distinct().Select(y => new Championship
                 {
-                    Year = r.Date.Year
-                }).Distinct().OrderBy(c => c.Year).ToList();
+                    Year = y
+                }).OrderBy(c => c.Year).ToList();
             }
         }
 
