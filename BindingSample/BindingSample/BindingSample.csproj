@@ -55,9 +55,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\Person.cs" />
     <Compile Include="Services\BooksService.cs" />
+    <Compile Include="Utilities\BindableBase.cs" />
     <Compile Include="Utilities\BookTemplateSelector.cs" />
     <Compile Include="Utilities\MyTraceListener.cs" />
+    <Compile Include="Utilities\PersonConverter.cs" />
     <Compile Include="Utilities\StringArrayToStringConverter.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

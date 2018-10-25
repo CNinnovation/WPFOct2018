@@ -9,6 +9,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Window.Resources>
+        <utils:PersonConverter x:Key="PersonConverter" />
         <utils:StringArrayToStringConverter x:Key="StringConverter" />
         <DataTemplate DataType="{x:Type models:Book}" x:Key="WroxBooks">
             <Border Background="Red">
@@ -20,8 +21,8 @@
                         <RowDefinition />
                         <RowDefinition />
                     </Grid.RowDefinitions>
-                    <TextBlock Text="{Binding Title}" />
-                    <TextBlock Grid.Row="1" Text="{Binding Publisher}" />
+                    <TextBlock Text="{Binding Title, Mode=OneWay}" />
+                    <TextBlock Grid.Row="1" Text="{Binding Publisher, Mode=OneWay}" />
                 </Grid>
 
             </Border>
@@ -36,8 +37,8 @@
                         <RowDefinition />
                         <RowDefinition />
                     </Grid.RowDefinitions>
-                    <TextBlock Text="{Binding Titl}" />
-                    <TextBlock Grid.Row="1" Text="{Binding Publisher}" />
+                    <TextBlock Text="{Binding Title, Mode=OneWay}" />
+                    <TextBlock Grid.Row="1" Text="{Binding Publisher, Mode=OneWay}" />
                 </Grid>
 
             </Border>
@@ -47,21 +48,45 @@
                                     DefaultBookTemplate="{StaticResource DefaultBooks}" />
     </Window.Resources>
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <ListBox 
-            ItemsSource="{Binding}" 
+            ItemsSource="{Binding Books}" 
             IsSynchronizedWithCurrentItem="True" 
             Grid.IsSharedSizeScope="True"
             ItemTemplateSelector="{StaticResource MyBookTemplateSelector}">
         </ListBox>
         <StackPanel Orientation="Vertical" Grid.Column="1">
-            <TextBlock Text="{Binding /Title, Mode=OneWay}" />
-            <Button Content="{Binding /, Mode=OneWay}" ContentTemplateSelector="{StaticResource MyBookTemplateSelector}" />
-            <TextBlock Text="{Binding /Authors, Mode=OneWay, Converter={StaticResource StringConverter}, ConverterParameter=', '}" />
-            <TextBox Text="{Binding /Title, Mode=TwoWay}" />
+            <TextBlock Text="{Binding Books/Title, Mode=OneWay}" />
+            <Button Content="{Binding Books/, Mode=OneWay}" ContentTemplateSelector="{StaticResource MyBookTemplateSelector}" />
+            <TextBlock Text="{Binding Books/Authors, Mode=OneWay, Converter={StaticResource StringConverter}, ConverterParameter=', '}" />
+            <TextBox Text="{Binding Books/Title, Mode=TwoWay}" />
+            <Button Click="OnChangeBook">Change Book</Button>
+            <Button Click="OnChangeBooks">Change Books</Button>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
+            <TextBlock>
+                <TextBlock.Text>
+                    <MultiBinding StringFormat="{}{1}, {0}">
+                        <Binding Path="Person.FirstName" />
+                        <Binding Path="Person.LastName" />
+                    </MultiBinding>
+                </TextBlock.Text>
+            </TextBlock>
+            <TextBlock>
+                <TextBlock.Text>
+                    <MultiBinding Converter="{StaticResource PersonConverter}" ConverterParameter="FirstLast">
+                        <Binding Path="Person.FirstName" />
+                        <Binding Path="Person.LastName" />
+                    </MultiBinding>
+                </TextBlock.Text>
+            </TextBlock>
         </StackPanel>
 
     </Grid>
