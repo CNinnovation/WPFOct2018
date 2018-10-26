@@ -30,6 +30,9 @@ namespace BindingSample
             InitializeComponent();
             this.DataContext = this;
             Person = new Person { FirstName = "Katharina", LastName = "Nagel" };
+
+
+            CollectionViewSource.GetDefaultView(Books).Filter = o => (o as Book).Publisher == "Wrox Press";
         }
 
         public IEnumerable<Book> Books => _books;

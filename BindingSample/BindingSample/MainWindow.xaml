@@ -21,7 +21,7 @@
                         <RowDefinition />
                         <RowDefinition />
                     </Grid.RowDefinitions>
-                    <TextBlock Text="{Binding Title, Mode=OneWay}" />
+                    <TextBlock Text="{Binding Titl, Mode=OneWay}" />
                     <TextBlock Grid.Row="1" Text="{Binding Publisher, Mode=OneWay}" />
                 </Grid>
 
