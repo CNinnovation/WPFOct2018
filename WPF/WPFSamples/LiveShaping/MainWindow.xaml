@@ -9,7 +9,7 @@
         mc:Ignorable="d"
         Title="Live Shaping" Height="350" Width="525">
     <Window.Resources>
-        <CollectionViewSource x:Key="cvs" Source="{Binding}" IsLiveSortingRequested="True">
+        <CollectionViewSource x:Key="cvs" Source="{Binding}" IsLiveSortingRequested="True" >
             <CollectionViewSource.SortDescriptions>
                 <scm:SortDescription PropertyName="Position" />
             </CollectionViewSource.SortDescriptions>

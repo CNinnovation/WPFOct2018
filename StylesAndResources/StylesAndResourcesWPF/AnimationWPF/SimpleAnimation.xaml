@@ -23,11 +23,15 @@
                         <Storyboard x:Name="MoveResizeStoryboard">
                             <!--<DoubleAnimation Duration="0:0:10" To="5" Storyboard.TargetName="scale1" Storyboard.TargetProperty="(ScaleX)" />
                             <DoubleAnimation Duration="0:0:10" To="3" Storyboard.TargetName="scale1" Storyboard.TargetProperty="(ScaleY)" />-->
-                            <DoubleAnimation Duration="0:0:10" To="5" Storyboard.TargetName="ellipse1" Storyboard.TargetProperty="(UIElement.RenderTransform).Children[0].(ScaleTransform.ScaleX)" />
+                            <DoubleAnimation Duration="0:0:10" To="5" Storyboard.TargetName="ellipse1" Storyboard.TargetProperty="(UIElement.RenderTransform).Children[0].(ScaleTransform.ScaleX)">
+                                <DoubleAnimation.EasingFunction>
+                                    <BounceEase />
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
                             <DoubleAnimation Duration="0:0:10" To="3" Storyboard.TargetName="ellipse1" Storyboard.TargetProperty="(UIElement.RenderTransform).Children[0].(ScaleTransform.ScaleY)" />
                             <DoubleAnimation Duration="0:0:10" To="400" Storyboard.TargetName="ellipse1" Storyboard.TargetProperty="(UIElement.RenderTransform).Children[1].(TranslateTransform.X)" />
                             <DoubleAnimation Duration="0:0:10" To="200" Storyboard.TargetName="ellipse1" Storyboard.TargetProperty="(UIElement.RenderTransform).Children[1].(TranslateTransform.Y)" />
-                            <ColorAnimation Duration="0:0:10" To="Red" Storyboard.TargetName="ellipse1" Storyboard.TargetProperty="(Ellipse.Fill).(SolidColorBrush.Color)" />
+                            <ColorAnimation Duration="0:0:10" AutoReverse="True" To="Red" Storyboard.TargetName="ellipse1" Storyboard.TargetProperty="(Ellipse.Fill).(SolidColorBrush.Color)" />
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>

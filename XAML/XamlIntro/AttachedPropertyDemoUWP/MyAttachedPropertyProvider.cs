@@ -13,7 +13,8 @@ namespace AttachedPropertyDemoUWP
         public static readonly DependencyProperty MySampleProperty =
             DependencyProperty.RegisterAttached(
                 "MySample", 
-                typeof(string), 
+                typeof(string), propdp
+
                 typeof(MyAttachedPropertyProvider),
                 new PropertyMetadata(string.Empty));
 
@@ -22,6 +23,6 @@ namespace AttachedPropertyDemoUWP
 
         public static string GetMySample(UIElement element) =>
             (string)element.GetValue(MySampleProperty);
-    }
 
+    }
 }
